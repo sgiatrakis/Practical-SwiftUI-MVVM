@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let vm = ContentViewModel()
+    
     var body: some View {
         Text("Hello, world!")
-            .padding()
+            .padding().onAppear {
+                vm.fetchUSAData()
+            }
     }
 }
 
