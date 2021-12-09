@@ -13,6 +13,13 @@
 		707DA75127621C350083F921 /* USAData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DA75027621C350083F921 /* USAData.swift */; };
 		707DA75327621FA60083F921 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DA75227621FA60083F921 /* Repository.swift */; };
 		709EE66C2762296C00BF2CAA /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EE66B2762296C00BF2CAA /* ContentViewModel.swift */; };
+		709EE66F27622D9E00BF2CAA /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EE66E27622D9E00BF2CAA /* BaseViewModel.swift */; };
+		709EE67127622DC500BF2CAA /* BaseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EE67027622DC500BF2CAA /* BaseAlert.swift */; };
+		709EE673276230F500BF2CAA /* BaseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EE672276230F500BF2CAA /* BaseLoader.swift */; };
+		709EE6752762315600BF2CAA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EE6742762315600BF2CAA /* BaseView.swift */; };
+		709EE6772762323200BF2CAA /* BaseTopRightBadges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EE6762762323200BF2CAA /* BaseTopRightBadges.swift */; };
+		709EE67A2762360800BF2CAA /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EE6792762360800BF2CAA /* ColorExtension.swift */; };
+		709EE67C2762445100BF2CAA /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EE67B2762445100BF2CAA /* StartingView.swift */; };
 		70C2E598275E56C6007DB761 /* PracticalSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2E597275E56C6007DB761 /* PracticalSwiftUIApp.swift */; };
 		70C2E59A275E56C6007DB761 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2E599275E56C6007DB761 /* ContentView.swift */; };
 		70C2E59C275E56C7007DB761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C2E59B275E56C7007DB761 /* Assets.xcassets */; };
@@ -25,6 +32,13 @@
 		707DA75027621C350083F921 /* USAData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAData.swift; sourceTree = "<group>"; };
 		707DA75227621FA60083F921 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		709EE66B2762296C00BF2CAA /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		709EE66E27622D9E00BF2CAA /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		709EE67027622DC500BF2CAA /* BaseAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlert.swift; sourceTree = "<group>"; };
+		709EE672276230F500BF2CAA /* BaseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLoader.swift; sourceTree = "<group>"; };
+		709EE6742762315600BF2CAA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		709EE6762762323200BF2CAA /* BaseTopRightBadges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTopRightBadges.swift; sourceTree = "<group>"; };
+		709EE6792762360800BF2CAA /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		709EE67B2762445100BF2CAA /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
 		70C2E594275E56C6007DB761 /* PracticalSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticalSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C2E597275E56C6007DB761 /* PracticalSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticalSwiftUIApp.swift; sourceTree = "<group>"; };
 		70C2E599275E56C6007DB761 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,11 +80,34 @@
 		707DA75427621FAE0083F921 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				709EE6782762359C00BF2CAA /* Extensions */,
+				709EE66D27622D7500BF2CAA /* Base Elements */,
 				70C2E597275E56C6007DB761 /* PracticalSwiftUIApp.swift */,
 				70C2E599275E56C6007DB761 /* ContentView.swift */,
 				709EE66B2762296C00BF2CAA /* ContentViewModel.swift */,
+				709EE67B2762445100BF2CAA /* StartingView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		709EE66D27622D7500BF2CAA /* Base Elements */ = {
+			isa = PBXGroup;
+			children = (
+				709EE66E27622D9E00BF2CAA /* BaseViewModel.swift */,
+				709EE67027622DC500BF2CAA /* BaseAlert.swift */,
+				709EE672276230F500BF2CAA /* BaseLoader.swift */,
+				709EE6742762315600BF2CAA /* BaseView.swift */,
+				709EE6762762323200BF2CAA /* BaseTopRightBadges.swift */,
+			);
+			path = "Base Elements";
+			sourceTree = "<group>";
+		};
+		709EE6782762359C00BF2CAA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				709EE6792762360800BF2CAA /* ColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		70C2E58B275E56C5007DB761 = {
@@ -188,8 +225,15 @@
 				70C2E59A275E56C6007DB761 /* ContentView.swift in Sources */,
 				70C2E598275E56C6007DB761 /* PracticalSwiftUIApp.swift in Sources */,
 				709EE66C2762296C00BF2CAA /* ContentViewModel.swift in Sources */,
+				709EE67A2762360800BF2CAA /* ColorExtension.swift in Sources */,
 				707DA74F27621A9A0083F921 /* Network.swift in Sources */,
+				709EE6772762323200BF2CAA /* BaseTopRightBadges.swift in Sources */,
+				709EE66F27622D9E00BF2CAA /* BaseViewModel.swift in Sources */,
 				707DA74D2762178B0083F921 /* RequstBuilder.swift in Sources */,
+				709EE673276230F500BF2CAA /* BaseLoader.swift in Sources */,
+				709EE67C2762445100BF2CAA /* StartingView.swift in Sources */,
+				709EE67127622DC500BF2CAA /* BaseAlert.swift in Sources */,
+				709EE6752762315600BF2CAA /* BaseView.swift in Sources */,
 				707DA75327621FA60083F921 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

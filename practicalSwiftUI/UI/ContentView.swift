@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let vm = ContentViewModel()
+    @StateObject var viewModel = ContentViewModel()
     
     var body: some View {
-        Text("Hello, world!")
-            .padding().onAppear {
-                vm.fetchUSAData()
-            }
+        BaseView(viewAlert: $viewModel.viewAlert) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Hello World")
+            }.padding(.horizontal)
+        }.navigationBarTitle("Results List")
     }
 }
 
