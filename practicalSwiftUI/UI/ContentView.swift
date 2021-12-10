@@ -13,10 +13,26 @@ struct ContentView: View {
     
     var body: some View {
         BaseView(viewAlert: $viewModel.viewAlert) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Hello World")
-            }.padding(.horizontal)
-        }.navigationBarTitle("Results List")
+            if viewModel.isFetched {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("USA Population Per Year")
+                        .padding(16)
+                    
+                    List {
+                        ForEach(Array(viewModel.data.enumerated()), id: \.element) { index, item in
+                            DataDetailsItem(item: item, index: index)
+                        }
+                    }
+                    
+                }
+            } else {
+                Spacer()
+                BaseLoader()
+                Spacer()
+            }
+        }
+        .navigationBarTitle("Results List")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

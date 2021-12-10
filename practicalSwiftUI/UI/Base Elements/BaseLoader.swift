@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BasicLoader: View {
+struct BaseLoader: View {
     
     var body: some View {
         HStack(spacing: 6) {

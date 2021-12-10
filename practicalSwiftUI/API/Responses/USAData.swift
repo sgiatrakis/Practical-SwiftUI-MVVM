@@ -23,11 +23,11 @@ public struct USAData: Decodable {
     
 }
 
-public struct USADataDetails: Decodable {
+public struct USADataDetails: Decodable, Hashable {
     
-    public var nation: String
-    public var year: String
-    public var population: Double
+    public var nation: String = ""
+    public var year: String = ""
+    public var population: Double = 0.0
     
     private enum CodingKeys: String, CodingKey {
         case Nation
@@ -42,5 +42,6 @@ public struct USADataDetails: Decodable {
         year = try container.decode(String.self, forKey: .Year)
         population = try container.decode(Double.self, forKey: .Population)
     }
-
+    
+    init() {}
 }

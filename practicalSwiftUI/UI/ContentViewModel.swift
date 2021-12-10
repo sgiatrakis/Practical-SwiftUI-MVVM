@@ -9,9 +9,14 @@ import Foundation
 
 class ContentViewModel: BaseViewModel {
     
+    @Published var data = [USADataDetails]()
+    
     override init() {
         super.init()
-        fetchUSAData()
+        // Even though it's a real API Call, just for exhibition reasons a small delay added for the View's Loader to be observable.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.fetchUSAData()
+          }
     }
     
     public func fetchUSAData() {
@@ -32,7 +37,7 @@ class ContentViewModel: BaseViewModel {
                 return
             }
             
-            print("Safe Data \(safeData)")
+            self.data = safeData
         }
     }
     

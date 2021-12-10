@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7033E3B127636C7B009489B6 /* DataDetailsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033E3B027636C7B009489B6 /* DataDetailsItem.swift */; };
+		7033E3B427637459009489B6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7033E3B327637459009489B6 /* Kingfisher */; };
 		707DA7492762117E0083F921 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 707DA7482762117E0083F921 /* Alamofire */; };
 		707DA74D2762178B0083F921 /* RequstBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DA74C2762178B0083F921 /* RequstBuilder.swift */; };
 		707DA74F27621A9A0083F921 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DA74E27621A9A0083F921 /* Network.swift */; };
@@ -27,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7033E3B027636C7B009489B6 /* DataDetailsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDetailsItem.swift; sourceTree = "<group>"; };
 		707DA74C2762178B0083F921 /* RequstBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequstBuilder.swift; sourceTree = "<group>"; };
 		707DA74E27621A9A0083F921 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		707DA75027621C350083F921 /* USAData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAData.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7033E3B427637459009489B6 /* Kingfisher in Frameworks */,
 				707DA7492762117E0083F921 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +90,7 @@
 				70C2E599275E56C6007DB761 /* ContentView.swift */,
 				709EE66B2762296C00BF2CAA /* ContentViewModel.swift */,
 				709EE67B2762445100BF2CAA /* StartingView.swift */,
+				7033E3B027636C7B009489B6 /* DataDetailsItem.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			name = PracticalSwiftUI;
 			packageProductDependencies = (
 				707DA7482762117E0083F921 /* Alamofire */,
+				7033E3B327637459009489B6 /* Kingfisher */,
 			);
 			productName = PracticalSwiftUI;
 			productReference = 70C2E594275E56C6007DB761 /* PracticalSwiftUI.app */;
@@ -194,6 +200,7 @@
 			mainGroup = 70C2E58B275E56C5007DB761;
 			packageReferences = (
 				707DA7472762117E0083F921 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7033E3B227637459009489B6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 70C2E595275E56C6007DB761 /* Products */;
 			projectDirPath = "";
@@ -233,6 +240,7 @@
 				709EE673276230F500BF2CAA /* BaseLoader.swift in Sources */,
 				709EE67C2762445100BF2CAA /* StartingView.swift in Sources */,
 				709EE67127622DC500BF2CAA /* BaseAlert.swift in Sources */,
+				7033E3B127636C7B009489B6 /* DataDetailsItem.swift in Sources */,
 				709EE6752762315600BF2CAA /* BaseView.swift in Sources */,
 				707DA75327621FA60083F921 /* Repository.swift in Sources */,
 			);
@@ -443,6 +451,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7033E3B227637459009489B6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = exactVersion;
+				version = 7.1.2;
+			};
+		};
 		707DA7472762117E0083F921 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -454,6 +470,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7033E3B327637459009489B6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7033E3B227637459009489B6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		707DA7482762117E0083F921 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 707DA7472762117E0083F921 /* XCRemoteSwiftPackageReference "Alamofire" */;
