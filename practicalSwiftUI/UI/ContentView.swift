@@ -17,13 +17,11 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("USA Population Per Year")
                         .padding(16)
-                    
                     List {
-                        ForEach(Array(viewModel.data.enumerated()), id: \.element) { index, item in
-                            DataDetailsItem(item: item, index: index)
+                        ForEach((0..<viewModel.data.count)) { index in
+                            DataDetailsItem(item: $viewModel.data[index], viewAlert: $viewModel.viewAlert, index: index)
                         }
                     }
-                    
                 }
             } else {
                 Spacer()
@@ -38,6 +36,12 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let vm = ContentViewModel()
+        vm.isFetched = true
+        
+        let dummy = USADataDetails.makeDummy()
+        vm.data = [dummy, dummy, dummy]
+        
+        return ContentView(viewModel: vm)
     }
 }

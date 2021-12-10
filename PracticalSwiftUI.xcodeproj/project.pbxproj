@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7033E3B127636C7B009489B6 /* DataDetailsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033E3B027636C7B009489B6 /* DataDetailsItem.swift */; };
 		7033E3B427637459009489B6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7033E3B327637459009489B6 /* Kingfisher */; };
+		7033E3B627637E41009489B6 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033E3B527637E41009489B6 /* BaseTextField.swift */; };
 		707DA7492762117E0083F921 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 707DA7482762117E0083F921 /* Alamofire */; };
 		707DA74D2762178B0083F921 /* RequstBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DA74C2762178B0083F921 /* RequstBuilder.swift */; };
 		707DA74F27621A9A0083F921 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DA74E27621A9A0083F921 /* Network.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		7033E3B027636C7B009489B6 /* DataDetailsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDetailsItem.swift; sourceTree = "<group>"; };
+		7033E3B527637E41009489B6 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		707DA74C2762178B0083F921 /* RequstBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequstBuilder.swift; sourceTree = "<group>"; };
 		707DA74E27621A9A0083F921 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		707DA75027621C350083F921 /* USAData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USAData.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				709EE672276230F500BF2CAA /* BaseLoader.swift */,
 				709EE6742762315600BF2CAA /* BaseView.swift */,
 				709EE6762762323200BF2CAA /* BaseTopRightBadges.swift */,
+				7033E3B527637E41009489B6 /* BaseTextField.swift */,
 			);
 			path = "Base Elements";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			files = (
 				707DA75127621C350083F921 /* USAData.swift in Sources */,
 				70C2E59A275E56C6007DB761 /* ContentView.swift in Sources */,
+				7033E3B627637E41009489B6 /* BaseTextField.swift in Sources */,
 				70C2E598275E56C6007DB761 /* PracticalSwiftUIApp.swift in Sources */,
 				709EE66C2762296C00BF2CAA /* ContentViewModel.swift in Sources */,
 				709EE67A2762360800BF2CAA /* ColorExtension.swift in Sources */,

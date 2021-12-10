@@ -10,14 +10,18 @@ import Kingfisher
 
 struct DataDetailsItem: View {
     
-    var item: USADataDetails
-    let photoURL = "https://picsum.photos/80/80"
+    // Bindings
+    @Binding var item: USADataDetails
+    @Binding var viewAlert: BaseAlert
+    
     var index = 0
+    let photoURL = "https://picsum.photos/80/80"
     
     var body: some View {
         HStack (spacing: 20) {
             // Just a Kingfisher trick in order to get non-cached images
             KFImage.url(URL(string: photoURL + "?v\(index)"))
+                .placeholder { Image("placeholder") }
                 .clipShape(Circle())
                 .frame(width: 80, height: 80)
             VStack(alignment: .leading, spacing: 8) {
@@ -28,6 +32,7 @@ struct DataDetailsItem: View {
                     Spacer()
                 }.font(.title2)
                 Text("Population: " + String(format: "%.0f", item.population))
+                BaseTextField(placeHolder: "Type your notes", textLimit: 12, safetyCheck: .MoreThanOneCharacter, viewAlert: $viewAlert, bindedText: $item.notes)
             }
             Spacer()
         }
@@ -36,11 +41,7 @@ struct DataDetailsItem: View {
 
 struct DataDetailsItem_Previews: PreviewProvider {
     static var previews: some View {
-        var dummyData = USADataDetails()
-        dummyData.nation = "United States"
-        dummyData.year = "2021"
-        dummyData.population = 328239523
-        
-        return DataDetailsItem(item: dummyData)
+        let dummyData = USADataDetails.makeDummy()
+        return DataDetailsItem(item: .constant(dummyData), viewAlert: .constant(BaseAlert()), index: 1)
     }
 }
