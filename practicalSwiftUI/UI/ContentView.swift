@@ -15,8 +15,13 @@ struct ContentView: View {
         BaseView(viewAlert: $viewModel.viewAlert) {
             if viewModel.isFetched {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("USA Population Per Year")
-                        .padding(16)
+                    Group {
+                        Text("USA Population Per Year")
+                            .bold()
+                            .font(.title2)
+                        Text("API used for example: datausa.io")
+                    }
+                    .padding(.horizontal)
                     List {
                         ForEach((0..<viewModel.data.count)) { index in
                             DataDetailsItem(item: $viewModel.data[index], viewAlert: $viewModel.viewAlert, index: index)

@@ -21,7 +21,7 @@ struct BaseTextField: View {
     
     enum SafetyCheck: String {
         // Just a random check in order to add some logic
-        case MoreThanOneCharacter = "Please insert more than one Character"
+        case MoreThanTwoCharacters = "More than two characters inserted"
     }
     
     init(placeHolder: String,
@@ -73,9 +73,9 @@ extension BaseTextField {
     
     func validateLength(_ safetyCheck: SafetyCheck) {
         switch safetyCheck {
-        case .MoreThanOneCharacter:
-            if bindedText.count < 2 {
-                self.viewAlert.setActive(message: SafetyCheck.MoreThanOneCharacter.rawValue)
+        case .MoreThanTwoCharacters:
+            if bindedText.count > 2 {
+                self.viewAlert.setActive(message: SafetyCheck.MoreThanTwoCharacters.rawValue)
             }
         }
     }

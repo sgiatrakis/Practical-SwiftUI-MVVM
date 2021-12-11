@@ -19,7 +19,7 @@ struct BaseView<Content: View>: View {
     /// BaseView initialization. Every func parameter has an initial value for having usage flexibility.
     /// - Parameters:
     ///   - viewAlert: ViewModel's baseAlert
-    ///   - showBlueLine: Show the top Blue Line or not
+    ///   - showTopLine: Show the top Blue Line or not
     ///   - showTopRightBadges: Show the top right Cart & List badges Line or not
     ///   - content: Additional Content
     init(viewAlert: Binding<BaseAlert> = .constant(BaseAlert()),
@@ -45,7 +45,7 @@ struct BaseView<Content: View>: View {
                 content
             }.frame(minWidth: .none, maxWidth: .infinity, minHeight: .none, maxHeight: .infinity, alignment: .topLeading)
         }
-        .navigationBarItems(trailing: showTopRightBadges ? BaseTopRightBadges() : nil)
+        .navigationBarItems(trailing: showTopRightBadges ? BaseTopRightBadges(viewAlert: $viewAlert) : nil)
         .alert(isPresented: $viewAlert.show) {
             Alert(title: Text("") , message: Text(viewAlert.message))
         }

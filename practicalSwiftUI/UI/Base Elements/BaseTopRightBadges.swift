@@ -9,12 +9,14 @@ import Foundation
 import SwiftUI
 
 struct BaseTopRightBadges: View {
+    
+    @Binding var viewAlert: BaseAlert
 
     var body: some View {
         return
             HStack(spacing: 24) {
                 Button(action: {
-                    // TODO
+                    self.viewAlert.setActive(message: "Left Nav Icon Tapped. \nCheck BaseTopRightBadges for more details.")
                 }) {
                     ZStack {
                         Image("chat-icon")
@@ -22,7 +24,7 @@ struct BaseTopRightBadges: View {
                     }
                 }
                 Button(action: {
-                    // TODO
+                    self.viewAlert.setActive(message: "Right Nav Icon Tapped. \nCheck BaseTopRightBadges for more details.")
                 }) {
                     ZStack {
                         Image("share-icon")
@@ -55,6 +57,6 @@ struct BadgeCircle: View {
 
 struct NavTopRightBadges_Previews: PreviewProvider {
     static var previews: some View {
-        return BaseTopRightBadges()
+        return BaseTopRightBadges(viewAlert: .constant(BaseAlert()))
     }
 }
