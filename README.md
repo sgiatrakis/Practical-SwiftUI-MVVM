@@ -4,7 +4,7 @@
 
 A simple SwiftUI project demonstrating MVVM pattern by some practical examples.
 
-<img src="https:www.giatrakis.com/SwiftUI-MVVM.gif" width="168"/>
+<img src="https://www.giatrakis.com/SwiftUI-MVVM.gif" width="300"/>
 
 ## API used for demonstration
 
