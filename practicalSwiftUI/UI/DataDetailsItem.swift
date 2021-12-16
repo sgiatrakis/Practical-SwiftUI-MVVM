@@ -32,7 +32,7 @@ struct DataDetailsItem: View {
                     Spacer()
                 }.font(.title2)
                 Text("Population: " + String(format: "%.0f", item.population))
-                BaseTextField(placeHolder: "Type your notes", textLimit: 12, safetyCheck: .MoreThanTwoCharacters, viewAlert: $viewAlert, bindedText: $item.notes)
+                BaseTextField(placeHolder: "Type your notes", textLimit: 12, validationCheck: .MoreThanTwoCharacters, viewAlert: $viewAlert, bindedText: $item.notes)
             }
             Spacer()
         }

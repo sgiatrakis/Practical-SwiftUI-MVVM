@@ -12,7 +12,7 @@ struct StartingView: View {
     
     var body: some View {
         NavigationView {
-            BaseView(showTopRightBadges: false) {
+            BaseView(showNavItems: false) {
                 VStack(spacing: 20) {
                     Group {
                         Text("Next screen will try to demonstrate a practical and simple MVVM pattern.")

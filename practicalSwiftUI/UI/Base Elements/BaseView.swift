@@ -14,21 +14,21 @@ struct BaseView<Content: View>: View {
     
     let content: Content
     var showTopLine: Bool = true
-    var showTopRightBadges: Bool = true
+    var showNavItems: Bool = true
     
-    /// BaseView initialization. Every func parameter has an initial value for having usage flexibility.
+    /// BaseView initialization. Every func parameter has an initial value for usage flexibility.
     /// - Parameters:
     ///   - viewAlert: ViewModel's baseAlert
-    ///   - showTopLine: Show the top Blue Line or not
-    ///   - showTopRightBadges: Show the top right Cart & List badges Line or not
+    ///   - showTopLine: Show the top Line
+    ///   - showNavItems: Show the top Nav Items
     ///   - content: Additional Content
     init(viewAlert: Binding<BaseAlert> = .constant(BaseAlert()),
          showTopLine: Bool = true,
-         showTopRightBadges: Bool = true,
+         showNavItems: Bool = true,
          @ViewBuilder content: () -> Content) {
         self._viewAlert = viewAlert
         self.showTopLine = showTopLine
-        self.showTopRightBadges = showTopRightBadges
+        self.showNavItems = showNavItems
         self.content = content()
     }
     
@@ -45,7 +45,7 @@ struct BaseView<Content: View>: View {
                 content
             }.frame(minWidth: .none, maxWidth: .infinity, minHeight: .none, maxHeight: .infinity, alignment: .topLeading)
         }
-        .navigationBarItems(trailing: showTopRightBadges ? BaseTopRightBadges(viewAlert: $viewAlert) : nil)
+        .navigationBarItems(trailing: showNavItems ? BaseNavItems(viewAlert: $viewAlert) : nil)
         .alert(isPresented: $viewAlert.show) {
             Alert(title: Text("") , message: Text(viewAlert.message))
         }

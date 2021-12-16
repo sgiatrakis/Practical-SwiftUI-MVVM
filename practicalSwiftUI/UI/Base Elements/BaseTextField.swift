@@ -13,13 +13,13 @@ struct BaseTextField: View {
     var placeHolder: String
     var keyboardType: UIKeyboardType = .default
     var textLimit: Int? = nil
-    var safetyCheck: SafetyCheck? = nil
+    var validationCheck: ValidationCheck? = nil
     var disabled: Bool = false
     
     @Binding var viewAlert: BaseAlert
     @Binding var bindedText: String
     
-    enum SafetyCheck: String {
+    enum ValidationCheck: String {
         // Just a random check in order to add some logic
         case MoreThanTwoCharacters = "More than two characters inserted"
     }
@@ -27,14 +27,14 @@ struct BaseTextField: View {
     init(placeHolder: String,
          keyboardType: UIKeyboardType = .default,
          textLimit: Int? = nil,
-         safetyCheck: SafetyCheck? = nil,
+         validationCheck: ValidationCheck? = nil,
          disabled: Bool = false,
          viewAlert: Binding<BaseAlert> = .constant(BaseAlert()),
          bindedText: Binding<String>) {
         self.placeHolder = placeHolder
         self.keyboardType = keyboardType
         self.textLimit = textLimit
-        self.safetyCheck = safetyCheck
+        self.validationCheck = validationCheck
         self.disabled = disabled
         self._viewAlert = viewAlert
         self._bindedText = bindedText
@@ -43,10 +43,10 @@ struct BaseTextField: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             TextField(placeHolder, text: $bindedText, onEditingChanged: { changed in
-                guard let safetyCheck = safetyCheck else { return }
+                guard let validationCheck = validationCheck else { return }
                 /// Closure receives a Boolean value that indicates the editing status: true when the user begins editing, false  when they finish.
                 if !changed {
-                    validateLength(safetyCheck)
+                    validateLength(validationCheck)
                 }
             })
             .keyboardType(keyboardType)
@@ -71,11 +71,11 @@ extension BaseTextField {
         }
     }
     
-    func validateLength(_ safetyCheck: SafetyCheck) {
-        switch safetyCheck {
+    func validateLength(_ validationCheck: ValidationCheck) {
+        switch validationCheck {
         case .MoreThanTwoCharacters:
             if bindedText.count > 2 {
-                self.viewAlert.setActive(message: SafetyCheck.MoreThanTwoCharacters.rawValue)
+                self.viewAlert.setActive(message: ValidationCheck.MoreThanTwoCharacters.rawValue)
             }
         }
     }

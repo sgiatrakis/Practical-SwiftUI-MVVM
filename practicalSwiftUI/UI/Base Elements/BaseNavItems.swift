@@ -1,5 +1,5 @@
 //
-//  BaseTopRightBadges.swift
+//  BaseNavItems.swift
 //  PracticalSwiftUI
 //
 //  Created by Lysimachos Giatrakis on 9/12/21.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct BaseTopRightBadges: View {
+struct BaseNavItems: View {
     
     @Binding var viewAlert: BaseAlert
 
@@ -20,7 +20,7 @@ struct BaseTopRightBadges: View {
                 }) {
                     ZStack {
                         Image("chat-icon")
-                        BadgeCircle(badgeValue: "1")
+                        NavIcon(iconValue: "1")
                     }
                 }
                 Button(action: {
@@ -28,35 +28,36 @@ struct BaseTopRightBadges: View {
                 }) {
                     ZStack {
                         Image("share-icon")
-                        BadgeCircle(badgeValue: "2")
+                        NavIcon(iconValue: "2")
                     }
                 }
-            }.padding(8)
+            }.padding(4)
     }
 
     
 }
 
-struct BadgeCircle: View {
+struct NavIcon: View {
     
-    var badgeValue: String
+    var iconValue: String
     
     var body: some View {
         Group {
             Capsule()
                 .fill(Color.ui.primaryGreen)
-            
-            Text((badgeValue))
+            Text((iconValue))
                 .foregroundColor(Color.white)
-        }.frame(width: 20, height: 20)
-            .offset(x: 12, y: -11)
+                .font(.system(size:14))
+                .bold()
+        }.frame(width: 22, height: 22)
+            .offset(x: 11, y: -11)
     }
     
 }
 
 
-struct NavTopRightBadges_Previews: PreviewProvider {
+struct BaseNavItems_Previews: PreviewProvider {
     static var previews: some View {
-        return BaseTopRightBadges(viewAlert: .constant(BaseAlert()))
+        return BaseNavItems(viewAlert: .constant(BaseAlert()))
     }
 }
